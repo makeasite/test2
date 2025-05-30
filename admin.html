@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Settings - AgentDash</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      overflow-y: scroll;
+    }
+    header {
+      background: #0C3C56;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    header a {
+      color: #66ccff;
+      text-decoration: none;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
+    .admin-section {
+      padding: 20px;
+      background: white;
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #0C3C56;
+      font-size: 18px;
+      padding: 14px;
+      border: none;
+      font-weight: bold;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+      margin: 10px auto;
+      display: block;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+    details summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    @media (max-width: 600px) {
+      .admin-section {
+        padding: 15px;
+        margin: 15px 10px;
+        border-radius: 8px;
+      }
+      .admin-section label,
+      .admin-section input,
+      .admin-section textarea,
+      .admin-section select,
+      .admin-section button {
+        font-size: 14px;
+      }
+      header h1 {
+        font-size: 20px;
+      }
+      header a {
+        position: static;
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Agent Dash</a>
+    <h1>Agent Settings Panel</h1>
+  </header>
+
+  <section class="admin-section">
+    <h2>Profile Settings</h2>
+    <form>
+      <label>Email</label><input type="email">
+      <label>Password</label><input type="password">
+      <label>Phone Number</label><input type="tel">
+      <label>License Number</label><input type="text">
+      <label>Instagram</label><input type="text">
+      <label>Brokerage Name</label><input type="text">
+      <label>Mailing Address</label><input type="text" placeholder="Street Address">
+      <input type="text" placeholder="Street Address Line 2">
+      <input type="text" placeholder="City">
+      <input type="text" placeholder="State / Province">
+      <input type="text" placeholder="Postal / Zip Code">
+      <button type="submit">Update Settings</button>
+    </form>
+  </section>
+
+  <section class="admin-section">
+    <h2>Agent Preferences</h2>
+    <form>
+      <label>Preferred Notification Method</label>
+      <select>
+        <option>Email</option>
+        <option>SMS</option>
+        <option>Call</option>
+      </select>
+      <label>Preferred Lead Sources</label><input type="text">
+      <label>Default Page on Login</label>
+      <select><option>Agent Dashboard</option></select>
+      <label>Timezone</label><input type="text" value="EST (Eastern Time)">
+      <label>Daily Email Summary</label>
+      <select><option>Enabled</option><option>Disabled</option></select>
+      <label>Specialties</label>
+      <input type="checkbox"> Rentals <input type="checkbox"> Sales <input type="checkbox"> Commercial
+      <button type="submit">Save Preferences</button>
+    </form>
+  </section>
+
+  <section class="admin-section">
+    <h2>ACH Bank Information</h2>
+    <form>
+      <label>Realtor Name</label><input type="text">
+      <label>Type of Account</label>
+      <input type="radio" name="accountType"> Personal
+      <input type="radio" name="accountType"> Business
+      <label>Bank Name</label><input type="text">
+      <label>Account Name</label><input type="text">
+      <label>Account Number</label><input type="text">
+      <label>Routing Number</label><input type="text">
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section class="admin-section">
+    <h2>Release of Escrow Request</h2>
+    <form>
+      <label>Agent Name</label><input type="text">
+      <label>License #</label><input type="text">
+      <label>Email</label><input type="email">
+      <label>Phone</label><input type="tel">
+      <label>Reason for Request</label><input type="text">
+      <label>Closing or Sale/Rental/Refund Date</label><input type="date">
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section class="admin-section">
+    <h2>Release of Commission Request</h2>
+    <form>
+      <label>Agent Name</label><input type="text">
+      <label>License #</label><input type="text">
+      <label>Email</label><input type="email">
+      <label>Phone</label><input type="tel">
+      <label>Deal Address</label><input type="text">
+      <label>Move In / Close Date</label><input type="date">
+      <label>Amount</label><input type="text">
+      <label>Upload Invoice</label><input type="file">
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section class="admin-section">
+    <h2>Broker Signature Request</h2>
+    <form>
+      <label>Select Form Type</label>
+      <select>
+        <option>Referral Request</option>
+        <option>3rd Party Referral Lead Contract</option>
+        <option>Broker Registration</option>
+        <option>Other Forms</option>
+      </select>
+      <label>Upload Document</label><input type="file">
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+<!-- Cards 7 to 12 Content -->
+  <section class="admin-section">
+    <h2>Update Your W9</h2>
+    <p>Download and fill the IRS W9 form if any of your info has changed. Submit your updated form below.</p>
+    <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank">Download IRS W9 Form</a>
+    <label>Upload Your Completed W9</label>
+    <input type="file">
+    <button type="submit">Submit</button>
+  </section>
+
+  <section class="admin-section">
+    <h2>Conflict Support</h2>
+    <p>This is for any SERIOUS issues relating to a current transaction, with other realtor or for current situations that need to be escalated that you cannot handle yourself.</p>
+    <p><strong>If this is a legal question, please call the LEGAL LINE 617-555-7812</strong></p>
+    <input placeholder="Name">
+    <label>Type of transaction</label>
+    <select>
+      <option>Rental</option>
+      <option>Sales</option>
+      <option>Commercial</option>
+      <option>Business</option>
+      <option>Other</option>
+    </select>
+    <input placeholder="Closing Date">
+    <input placeholder="Property Address">
+    <input placeholder="Street Address Line 2">
+    <input placeholder="City">
+    <input placeholder="State / Province">
+    <input placeholder="Postal / Zip Code">
+    <input placeholder="Customer/Client/Realtor Name">
+    <input placeholder="Phone Number">
+    <input placeholder="Email">
+    <textarea placeholder="Description of the situation (Please be descriptive with details.)"></textarea>
+    <input type="file">
+    <button type="submit">Submit</button>
+  </section>
+
+  <section class="admin-section">
+    <h2>Invoice Generator</h2>
+    <p>Instructions:</p>
+    <ul>
+      <li>Download the Luna Realty Logo</li>
+      <li>Open <a href="https://invoice-generator.com" target="_blank">invoice-generator.com</a></li>
+      <li>Add your Logo and choose from your PC</li>
+      <li>From: Luna Realty</li>
+      <li>Bill To: Rental community/Co-Broker Name</li>
+      <li>Invoice #: Auto-generated to avoid duplicates</li>
+      <li>Item: Use Property address/Tenant name/Move in date/Realtor name</li>
+    </ul>
+    <p><strong>PLEASE MAIL ALL CHECKS TO:</strong><br>Luna Realty<br>481 Main Street, Waltham, MA 02452</p>
+    <button>Download Luna Realty Logo</button>
+  </section>
+
+  <section class="admin-section">
+    <h2>Request a W9</h2>
+    <p>Please fill the form and submit, you will get the W9 form by email immediately.</p>
+    <input placeholder="Realtor Name *">
+    <input type="email" placeholder="Email *">
+    <input placeholder="Reason you are requesting W9 *">
+    <button type="submit">Submit</button>
+  </section>
+
+  <section class="admin-section">
+    <h2>Marketing Materials</h2>
+    <p>Download Luna Realty marketing assets and access editable templates on Canva. Use Canva to drag in the logo and edit business cards, Instagram graphics, and listing sheets easily.</p>
+    <button>Download Logo</button>
+    <button onclick="window.open('https://www.canva.com', '_blank')">Open Canva Templates</button>
+  </section>
+
+  <section class="admin-section">
+    <h2>Onboarding Checklist</h2>
+    <details>
+      <summary>✅ Required Documents</summary>
+      <ul>
+        <li>Copy of Real Estate License (MA) - email to buywithluna@gmail.com if not already sent</li>
+        <li>Signed Independent Contractor Agreement - signed before onboarding</li>
+        <li>W9 Form - download above if not already sent in</li>
+      </ul>
+    </details>
+    <details>
+      <summary>📬 Tools to Register For</summary>
+      <ul>
+        <li>MLS PIN (broker provides login credentials)</li>
+        <li>YGL (broker provides login credentials)</li>
+        <li>Dotloop.com / Dochub.com</li>
+        <li>Zillow.com</li>
+        <li>Apartments.com</li>
+        <li>Spoteasy.com</li>
+      </ul>
+    </details>
+    <details>
+      <summary>🎓 Training Schedule</summary>
+      <ul>
+        <li>New Agent Orientation (Zoom)</li>
+        <li>Scripts & Objection Handling</li>
+        <li>Compliance & Forms 101</li>
+      </ul>
+    </details>
+  </section>
+
+  <footer>
+    Luna Realty • 481 Main Street, Waltham, MA 02452
+  </footer>
+</body>
+</html>
